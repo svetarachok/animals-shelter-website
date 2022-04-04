@@ -1,0 +1,45 @@
+:root {
+    --primary-color: #F1CDB3;
+    --dark-color: #545454;
+    --font-l: 20px;
+    --font-m: 17px;
+    --header-font-family: 'Georgia', serif;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url("../assets/fonts/Arial.woff2") format("woff2");
+  }
+
+@font-face { 
+    font-family: "Georgia";
+    src: url("../assets/fonts/Georgia.woff2") format("woff2");
+  }
+
+html {
+  /* background-color: var(--dark-color); */
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    flex-wrap: nowrap;
+}
+
+h1, h2, h3 {
+    font-family: var(--header-font-family);
+    font-style: normal;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 110%;
+    color: var(--primary-color);
+}
