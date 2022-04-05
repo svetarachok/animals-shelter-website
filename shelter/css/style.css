@@ -155,7 +155,7 @@ section {
     justify-content: space-between;
     gap: 42px;
     color: white;
-    background-image: url(../../assets/images/hero-screen.jpg);
+    background-image: url('../assets/images/hero-screen.jpg');
     background-repeat: no-repeat;
     background-position: center -90px;
     background-size: auto;
