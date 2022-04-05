@@ -7,12 +7,13 @@
     <title>Shelter</title>
     <!-- <link rel="stylesheet" href="../../css/normalize.css"> -->
     <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="logo">
             <h1 class="header_logo">
-                Cozy House
+                <a href="#">Cozy House</a> 
             </h1>
             <p class="subheader_logo">
                Shelter for pets in Boston
@@ -46,48 +47,114 @@
             </div>
         </section>
         <section class="pets">
-            <h3>Our friends who are looking for a house</h3>
-            <div class="pets_slider"></div>
+            <h3>Our friends who <br>are looking for a house</h3>
+            <div class="pets_slider">
+                <button class="btn secondary_btn round_btn">
+                    <span class="material-icons left_arrow">arrow_right_alt</span>
+                </button>
+                <div class="cards">
+                    <div class="card">
+                        <img src="../../assets/images/pets-katrine.jpg" alt="Pet Katerine image">
+                        <p class="card_name">Katrine</p>
+                        <button class="btn secondary_btn">Learn more</button>                        
+                    </div>
+                    <div class="card">
+                        <img src="../../assets/images/pets-jennifer.jpg" alt="Pet Jennifer image">
+                        <p class="card_name">Jennifer</p>
+                        <button class="btn secondary_btn">Learn more</button>
+                    </div>
+                    <div class="card">
+                        <img src="../../assets/images/pets-woody.jpg" alt="Pet Woody image">
+                        <p class="card_name">Woody</p>
+                        <button class="btn secondary_btn">Learn more</button>
+                    </div>
+                </div>
+                <button class="btn secondary_btn round_btn">
+                    <span class="material-icons">arrow_right_alt</span>
+                </button>
+            </div>
             <button class="btn primary_btn">Get to know the rest</button>
         </section>
         <section class="help">
-            <div class="help_items">
-
-            </div>
+            <h3>How you can help<br>our shelter</h3>
+            <ul class="help_items">
+                    <li class="help_item">
+                        <img src="../../assets/icons/icon-pet-food.svg" alt="" class="help_icon">
+                        <h4>Pet Food</h4>
+                    </li>
+                    <li class="help_item">
+                        <img src="../../assets/icons/icon-transportation.svg" alt="" class="help_icon">
+                        <h4>Transportation</h4>
+                    </li>
+                    <li class="help_item">
+                        <img src="../../assets/icons/icon-toys.svg" alt="" class="help_icon">
+                        <h4>Toys</h4>
+                    </li>
+                    <li class="help_item">
+                        <img src="../../assets/icons/icon-bowls-and-cups.svg" alt="" class="help_icon">
+                        <h4>Bowls and cups</h4>
+                    </li>
+                    <li class="help_item">
+                        <img src="../../assets/icons/icon-shampoos.svg" alt="" class="help_icon">
+                        <h4>Shampoos</h4>
+                    </li>
+                    <li class="help_item">
+                        <img src="../../assets/icons/icon-vitamins.svg" alt="" class="help_icon">
+                        <h4>Vitamins</h4>
+                    </li>
+                    <li class="help_item">
+                        <img src="../../assets/icons/icon-medicines.svg" alt="" class="help_icon">
+                        <h4>Medicines</h4>
+                    </li>
+                    <li class="help_item">
+                        <img src="../../assets/icons/icon-collars-leashes.svg" alt="" class="help_icon">
+                        <h4>Collars / leashes</h4>
+                    </li>
+                    <li class="help_item">
+                        <img src="../../assets/icons/icon-sleeping-area.svg" alt="" class="help_icon">
+                        <h4>Sleeping areas</h4>
+                    </li>
+            </ul>
         </section>
         <section class="donation">
             <div class="donation_section_image">
-                <img src="" alt="">
+                <img src="../../assets/images/donation-dog.png" alt="Image of a red puppet">
             </div>
             <div class="donation_content">
                 <h3>You can also make a donation</h3>
-                <p>Name of the bank / Type of bank account</p>
-                <div class="donation_credit_card"></div>
+                <h5>Name of the bank / Type of bank account</h5>
+                <button class="btn primary_btn donation_credit_card">
+                    <img src="../../assets/icons/icon-credit-card.svg" alt="Credit cerd icon" class="donation_card_icon">
+                    <h4 class="donation_card_number"><a href="#"> 8380 2880 8028 8791 7435</a></h4>
+                </button>
                 <p class="subtext">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
             </div>
         </section>
     </main>
     <footer class="footer">
-        <div class="footer_contacts">
+        <div class="footer_block">
+            <p class="footer_header">For questions and suggestions</p>
             <div class="contact_item">
-                <i>
-                
-                </i>
+                <img src="../../assets/icons/icon-email.svg" alt="address marker">
                 <a href="mailto: email@shelter.com">email@shelter.com</a>
             </div>
             <div class="contact_item">
-                <i>
-                
-                </i>
+                <img src="../../assets/icons/icon-phone.svg" alt="address marker">
                 <a href="tel: +136745677554">+13 674 567 75 54</a>
             </div>
         </div>
-        <div class="footer_address">
-            
+        <div class="footer_block">
+            <p class="footer_header">We are waiting for your visit</p>
+            <div class="contact_item">
+                <img src="../../assets/icons/icon-marker.svg" alt="address marker">
+                <p>1 Central Street, Boston (entrance from the store)</p>
+            </div>
+            <div class="contact_item">
+                <img src="../../assets/icons/icon-marker.svg" alt="address marker">
+                <p>18 South Park, London</p>
+            </div>
         </div>
-        <div class="footer_image">
-            <img src="" alt="">
-        </div>
+        <img src="../../assets/images/footer-puppy.png" alt="Puppy image">
     </footer>
 </body>
 </html>

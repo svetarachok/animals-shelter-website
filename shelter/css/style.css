@@ -6,9 +6,13 @@
     --dark-text-color: #4c4c4c;
     --inactive-link-color: #CDCDCD;
     --active-link-color: #FAFAFA;
+    --grey-bg-color: #F6F6F6;
+    --light-grey-color: #fafafa;
+    --font-xl: 35px;
     --font-l: 20px;
     --font-m: 17px;
     --header-font-family: 'Georgia', serif;
+    --italic-text: "Arial Italic", sans-serif;
 
 }
 *, *:before, *:after {
@@ -20,17 +24,23 @@
 
 @font-face {
     font-family: "Arial";
-    src: url("../../assets/fonts/Arial.woff2") format("woff2");
+    src: url("../assets/fonts/Arial.woff2") format("woff2");
   }
 
 @font-face { 
+    font-family: "Arial Italic";
+    src: url("../assets/fonts/Arial-Italic.woff2") format("woff2");
+  }
+
+  @font-face { 
     font-family: "Georgia";
-    src: url("../../assets/fonts/Georgia.woff2") format("woff2");
+    src: url("../assets/fonts/Georgia.woff2") format("woff2");
   }
 
 html {
-  /* background-color: var(--dark-color); */
   scroll-behavior: smooth;
+  background-color: #fdfdfd;
+  
 }
 
 body {
@@ -42,14 +52,15 @@ body {
     line-height: 24px;
     max-width: 1280px;
     margin: 0 auto; 
-    padding: 60px 0px;
     display: flex;
     flex-direction: column;
     align-content: stretch;
     flex-wrap: nowrap;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(87, 87, 87, 0.20);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
     font-family: var(--header-font-family);
     font-style: normal;
     font-weight: 400;
@@ -76,6 +87,30 @@ h3 {
     letter-spacing: 0.06em;
 }
 
+h4 {
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    line-height: 115%;
+}
+
+h5 {
+    font-size: 15px;
+    line-height: 110%;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+    letter-spacing: 0.06em;
+}
+
+a:hover {
+    color: var(--primary-light-color);
+    cursor: pointer;
+}
+
+
 .btn {
     font-family: var(--header-font-family);
     font-size: var(--font-m);
@@ -90,9 +125,19 @@ h3 {
     cursor: pointer;
 }
 
-.btn-secondary {
+.secondary_btn {
+    padding: 13px 43px;
     background-color: transparent;
     border: 2px solid var(--primary-color);
+}
+
+.round_btn {
+    padding: 12px 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .btn:hover {
@@ -101,15 +146,36 @@ h3 {
     cursor: pointer;
 }
 
+.secondary_btn:hover {
+    border-color: var(--primary-light-color);
+}
+
+.material-icons {
+    font-size: 22px;
+}
+
+.material-icons.left_arrow {
+    transform: rotate(180deg);
+}
+
+ul {
+    list-style: none;
+}
+
 /*Header styles*/
 
 .header {
-    height: 60px;
+    height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 60px;
     padding-left: 40px;
     padding-right: 40px;
+    background-image: url('../assets/images/hero-screen.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: auto;
 }
 
 .logo {
@@ -119,6 +185,7 @@ h3 {
     font-size: 13px;
     line-height: 15px;
     letter-spacing: 0.1em;
+    color: white;
 }
 
 nav.menu {
@@ -131,7 +198,7 @@ nav.menu {
     justify-content: space-between;
     flex-direction: row;
     list-style: none;
-    gap: 36px;
+    gap: 41px;
     color: var(--inactive-link-color);
     padding-bottom: 5px;
 }
@@ -157,7 +224,7 @@ section {
     color: white;
     background-image: url('../assets/images/hero-screen.jpg');
     background-repeat: no-repeat;
-    background-position: center -90px;
+    background-position: center -120px;
     background-size: auto;
 }
 
@@ -166,8 +233,9 @@ section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 42px;
-    padding-top: 163px;
+    gap: 40px;
+    padding-top: 164px;
+    color: var(--inactive-link-color);
 }
 
 .hero_section_image {
@@ -191,7 +259,7 @@ section {
     max-width: 430px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 24px;
 }
 
 .about_section_content h3 {
@@ -203,10 +271,149 @@ section {
 .pets {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 60px;
+    background-color: var(--grey-bg-color);
 }
 
 .pets h3 {
     text-align: center;
+    padding-top: 1px;
+}
+
+.pets_slider {
+    display: flex;
+    align-items: center;
+    gap: 53px;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+    text-align: center;
+}
+
+.card {
+    background-color: var(--light-grey-color);
+    padding-bottom: 30px;
+}
+
+.card_name {
+    font-size: var(--font-l);
+    color: var(--dark-header-color);
+    font-family: var(--header-font-family);
+    padding: 21px 0 30px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+}
+
+/*Help items*/
+.help h3 {
+    padding-top: 1px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+.help_items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 55px;
+    justify-content: center;
+    text-align: center;
+}
+
+.help h4 {
+    padding-top: 22px
+}
+
+/* Donation*/
+
+.donation {
+    background-color:  var(--grey-bg-color);
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.donation_section_image {
+    padding-top: 10px;
+}
+
+.donation h3 {
+    padding-bottom: 20px;
+    padding-right: 60px;
+}
+
+.donation h5 {
+    letter-spacing: 0.06em;
+}
+
+.donation_content {
+    padding-top: 2px;
+    max-width: 380px;
+}
+
+.donation_content a {
+    color: var(--dark-btn-color);
+}
+.donation_credit_card {
+    display: flex;
+    gap: 15px;
+    border-radius: 9px;
+    padding: 10px 15px;
+    margin-top: 19px;
+    margin-bottom: 20px;
+}
+
+.donation .subtext {
+    font-size: 12px;
+    font-family: var(--italic-text);
+    line-height: 18px;
+    color: #b2b2b2;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    padding: 40px 40px 0;
+    background-image: url('../assets/images/footer-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;
+    gap: 150px;
+    color: var(--primary-color);
+    font-family: var(--header-font-family);
+    font-size: var(--font-l);
+    
+}
+
+.footer_block {
+    padding-top: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+}
+
+.footer_block:nth-child(2){
+    padding-right: 16px;
+    gap: 31px;
+}
+
+.footer_header {
+    font-size: var(--font-xl);
+    font-family: var(--header-font-family);
+    color: white;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+.contact_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    letter-spacing: 0.06em;
 }
