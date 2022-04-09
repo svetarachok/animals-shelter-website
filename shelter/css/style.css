@@ -50,6 +50,7 @@ body {
     font-weight: 400;
     color: var(--dark-text-color);
     line-height: 24px;
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto; 
     display: flex;
@@ -102,6 +103,7 @@ h5 {
 a {
     text-decoration: none;
     letter-spacing: 0.06em;
+    line-height: 115%;
     color: var(--primary-color);
     transition: 0.5s ease-in-out;    
 }
@@ -138,12 +140,18 @@ a:hover {
 }
 
 .round_btn {
+    font-size: var(--font-l);
+    color: var(--dark-btn-color);
     padding: 12px 12px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
+}
+
+.round_btn_text {
+    width: 26px;
 }
 
 .btn:hover {
@@ -155,6 +163,19 @@ a:hover {
 .secondary_btn:hover {
     border-color: var(--primary-light-color);
     transition: 0.5s ease-in-out;    
+}
+
+.inactive_btn {
+    color: var(--inactive-link-color);
+    border-color: var(--inactive-link-color);
+    cursor: auto;
+}
+
+.inactive_btn:hover {
+    background-color: transparent;
+    color: var(--inactive-link-color);
+    border-color: var(--inactive-link-color);
+    cursor: auto;
 }
 
 .material-icons {
@@ -224,7 +245,7 @@ nav.menu {
     color: var(--active-link-color);
 }
 
-.nav_item_active {
+.nav_item_active_light {
     border-bottom: 2px solid var(--primary-color);
     transition: 0.5s ease-in-out;  
     cursor: pointer;  
@@ -245,7 +266,8 @@ section {
     padding: 60px 40px 0;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 42px;
     color: white;
     background-image: url('../assets/images/hero-screen.jpg');
@@ -278,6 +300,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 120px;
 }
 
@@ -299,7 +322,7 @@ section {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 59px;
+    gap: 58px;
     background-color: var(--grey-bg-color);
 }
 
@@ -318,7 +341,6 @@ section {
     display: flex;
     align-items: center;
     gap: 90px;
-    text-align: center;
 }
 
 .card {
@@ -326,6 +348,7 @@ section {
     padding-bottom: 30px;
     border-radius: 9px;
     transition: 0.5s ease-in-out;
+    text-align: center;
 }
 
 .card:hover {
@@ -376,6 +399,7 @@ section {
 .donation {
     background-color:  var(--grey-bg-color);
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
     align-items: center;
@@ -423,6 +447,7 @@ section {
 
 .footer {
     display: flex;
+    /* flex-wrap: wrap; */
     padding: 40px 40px 0;
     background-image: url('../assets/images/footer-bg.jpg');
     background-repeat: no-repeat;
@@ -444,7 +469,7 @@ section {
 
 .footer_block:nth-child(2){
     padding-right: 16px;
-    gap: 31px;
+    gap: 32px;
 }
 
 .footer_header {
@@ -470,3 +495,46 @@ a .contact_link {
 .footer a:hover {
     color: var(--primary-light-color);
 }
+
+
+/* Pets Page*/
+
+.header-transparent {
+    background-image: none;
+    padding-top: 0;
+    color: var(--dark-header-color);
+}
+
+.header-transparent a {
+    color: var(--dark-header-color);
+}
+
+.header-transparent a:hover {
+    color: var(--dark-btn-color);
+}
+
+.header-transparent .subheader_logo{
+    color: var(--dark-btn-color);
+}
+
+.nav_item_active_dark {
+    border-bottom: 2px solid var(--primary-color);
+    transition: 0.5s ease-in-out;  
+    cursor: pointer;  
+    color: var(--dark-header-color);
+}
+
+.pets_block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 31px;
+    column-gap: 40px;
+}
+
+.page_buttons {
+    display: flex;
+    gap: 20px;
+    padding-top: 3px;
+}
+
