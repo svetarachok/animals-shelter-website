@@ -85,6 +85,7 @@ h2 {
 h3 {
     font-size: 35px;
     letter-spacing: 0.06em;
+    line-height: 130%;
 }
 
 h4 {
@@ -99,15 +100,15 @@ h5 {
 }
 
 a {
-    color: var(--primary-color);
     text-decoration: none;
-    transition: 0.5s ease-in-out;
     letter-spacing: 0.06em;
+    color: var(--primary-color);
+    transition: 0.5s ease-in-out;    
 }
 
 a:hover {
-    color: var(--primary-light-color);
     cursor: pointer;
+    transition: 0.5s ease-in-out;
 }
 
 
@@ -115,7 +116,7 @@ a:hover {
     font-family: var(--header-font-family);
     font-size: var(--font-m);
     background-color: var(--primary-color);
-    padding: 15px 45px;
+    padding: 16px 45px;
     border: none;
     border-radius: 100px;
     color: var(--dark-btn-color);
@@ -123,6 +124,11 @@ a:hover {
     line-height: 130%;
     transition: 0.5s ease-in-out;
     cursor: pointer;
+}
+
+.btn a {
+    color: var(--dark-btn-color);
+    transition: 0.5s ease-in-out;    
 }
 
 .secondary_btn {
@@ -148,6 +154,7 @@ a:hover {
 
 .secondary_btn:hover {
     border-color: var(--primary-light-color);
+    transition: 0.5s ease-in-out;    
 }
 
 .material-icons {
@@ -181,6 +188,12 @@ ul {
 .logo {
     text-align: center;
 }
+
+.logo a {
+    text-align: center;
+    color: var(--primary-color);
+}
+
 .subheader_logo {
     font-size: 13px;
     line-height: 15px;
@@ -193,19 +206,32 @@ nav.menu {
 }
 
 .nav_items {
-    line-height: 24px;
+    line-height: 22px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     list-style: none;
-    gap: 41px;
+    gap: 36px;
+    letter-spacing: 0;
+}
+
+.nav_item a{
     color: var(--inactive-link-color);
-    padding-bottom: 5px;
+    letter-spacing: 0;
+}
+
+.nav_item a:hover {
+    color: var(--active-link-color);
 }
 
 .nav_item_active {
     border-bottom: 2px solid var(--primary-color);
+    transition: 0.5s ease-in-out;  
+    cursor: pointer;  
+    color: var(--active-link-color);
 }
+
+
 
 /* Main */
 
@@ -233,7 +259,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 40px;
+    gap: 41px;
     padding-top: 164px;
     color: var(--inactive-link-color);
 }
@@ -273,7 +299,7 @@ section {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 60px;
+    gap: 59px;
     background-color: var(--grey-bg-color);
 }
 
@@ -298,8 +324,20 @@ section {
 .card {
     background-color: var(--light-grey-color);
     padding-bottom: 30px;
+    border-radius: 9px;
+    transition: 0.5s ease-in-out;
 }
 
+.card:hover {
+    background-color: white;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+.card:hover .card-btn {
+    background-color: var(--primary-light-color);
+    border-color: var(--primary-light-color);
+}
 .card_name {
     font-size: var(--font-l);
     color: var(--dark-header-color);
@@ -309,16 +347,22 @@ section {
     letter-spacing: 0.05em;
 }
 
+.card img {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+
+
 /*Help items*/
 .help h3 {
-    padding-top: 1px;
     padding-bottom: 60px;
     text-align: center;
 }
 .help_items {
     display: flex;
     flex-wrap: wrap;
-    gap: 55px;
+    row-gap: 55px;
+    column-gap: 120px;
     justify-content: center;
     text-align: center;
 }
@@ -342,7 +386,8 @@ section {
 }
 
 .donation h3 {
-    padding-bottom: 20px;
+    padding-bottom: 21px;
+    line-height: 44px;
     padding-right: 60px;
 }
 
@@ -416,4 +461,12 @@ section {
     align-items: center;
     gap: 20px;
     letter-spacing: 0.06em;
+}
+
+a .contact_link {
+    color: var(--dark-btn-color);
+}
+
+.footer a:hover {
+    color: var(--primary-light-color);
 }
