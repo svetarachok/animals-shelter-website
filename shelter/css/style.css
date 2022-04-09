@@ -150,10 +150,6 @@ a:hover {
     align-content: center;
 }
 
-.round_btn_text {
-    width: 26px;
-}
-
 .btn:hover {
     background-color: var(--primary-light-color);
     transition: 0.5s ease-in-out;
@@ -538,3 +534,13 @@ a .contact_link {
     padding-top: 3px;
 }
 
+.page_number {
+    font-family: var(--header-font-family);
+    width: 52px;
+    background-color: var(--primary-color);
+    font-size: var(--font-l);
+    color: var(--dark-btn-color);
+    padding: 12px;
+    border-radius: 50px;
+    text-align: center;
+}
