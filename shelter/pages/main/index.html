@@ -11,26 +11,28 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <a href="#">
-                <h1 class="header_logo">
-                    Cozy House
-                 </h1>
-                <p class="subheader_logo">
-                    Shelter for pets in Boston
-                </p>
-            </a> 
-        </div>
-        <nav class="menu">
-            <ul class="nav_items">
-                <li class="nav_item nav_item_active_light">About the shelter</li>
-                <li class="nav_item"><a href="../pets/index.html">Our pets</a></li>
-                <li class="nav_item"><a href="#help">Help the shelter</a></li>
-                <li class="nav_item"><a href="#contacts">Contacts</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="wrapper">
+            <header class="header">
+            <div class="logo">
+                <a href="#">
+                    <h1 class="header_logo">
+                        Cozy House
+                    </h1>
+                    <p class="subheader_logo">
+                        Shelter for pets in Boston
+                    </p>
+                </a> 
+            </div>
+            <nav class="menu">
+                <ul class="nav_items">
+                    <li class="nav_item nav_item_active_light">About the shelter</li>
+                    <li class="nav_item"><a href="../pets/index.html">Our pets</a></li>
+                    <li class="nav_item"><a href="#help">Help the shelter</a></li>
+                    <li class="nav_item"><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
     <main class="main">
         <section class="hero_section">
             <div class="hero_section_content">
@@ -137,26 +139,28 @@
         </section>
     </main>
     <footer id="contacts" class="footer">
-        <div class="footer_block">
-            <p class="footer_header">For questions and suggestions</p>
-            <div class="contact_item">
-                <img src="../../assets/icons/icon-email.svg" alt="address marker">
-                <a href="mailto:email@shelter.com" class="contact_link">email@shelter.com</a>
+        <div class="footer_contacts">
+            <div class="footer_block">
+                <p class="footer_header">For questions and suggestions</p>
+                <div class="contact_item">
+                    <img src="../../assets/icons/icon-email.svg" alt="address marker">
+                    <a href="mailto:email@shelter.com" class="contact_link">email@shelter.com</a>
+                </div>
+                <div class="contact_item">
+                    <img src="../../assets/icons/icon-phone.svg" alt="address marker">
+                    <a href="tel:+136745677554" class="contact_link">+13 674 567 75 54</a>
+                </div>
             </div>
-            <div class="contact_item">
-                <img src="../../assets/icons/icon-phone.svg" alt="address marker">
-                <a href="tel:+136745677554" class="contact_link">+13 674 567 75 54</a>
-            </div>
-        </div>
-        <div class="footer_block">
-            <p class="footer_header">We are waiting for your visit</p>
-            <div class="contact_item">
-                <img src="../../assets/icons/icon-marker.svg" alt="address marker">
-                <a href="https://goo.gl/maps/qUVkoE2qpEjcNiCWA"  target="_blank">1 Central Street, Boston (entrance from the store)</a>
-            </div>
-            <div class="contact_item">
-                <img src="../../assets/icons/icon-marker.svg" alt="address marker">
-                <a href="https://goo.gl/maps/qUVkoE2qpEjcNiCWA"  target="_blank">18 South Park, London</a>
+            <div class="footer_block">
+                <p class="footer_header">We are waiting for your visit</p>
+                <div class="contact_item">
+                    <img src="../../assets/icons/icon-marker.svg" alt="address marker">
+                    <a href="https://goo.gl/maps/qUVkoE2qpEjcNiCWA"  target="_blank">1 Central Street, Boston (entrance from the store)</a>
+                </div>
+                <div class="contact_item">
+                    <img src="../../assets/icons/icon-marker.svg" alt="address marker">
+                    <a href="https://goo.gl/maps/qUVkoE2qpEjcNiCWA"  target="_blank">18 South Park, London</a>
+                </div>
             </div>
         </div>
         <img src="../../assets/images/footer-puppy.png" alt="Puppy image">

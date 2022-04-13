@@ -188,6 +188,10 @@ ul {
 
 /*Header styles*/
 
+.wrapper {
+    position: relative;
+}
+
 .header {
     position: absolute;
     margin-top: 30px;
@@ -263,10 +267,7 @@ section {
     flex-wrap: wrap;
     gap: 42px;
     color: white;
-    background-image: url('../assets/images/hero-screen.jpg');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: auto;
+    background: url(../assets/images/noise_transparent@2x.png), radial-gradient(100% 150% at 0% 0%, #5B483A 0%, #262425 100%)
 }
 
 .hero_section_content {
@@ -440,27 +441,27 @@ section {
 
 .footer {
     display: flex;
-    padding: 40px 40px 0;
-    background-image: url('../assets/images/footer-bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: auto;
-    gap: 150px;
+    padding: 45px 40px 0;
+    background: url(../assets/images/noise_transparent@2x.png), radial-gradient(100% 150% at 0% 0%, #5B483A 0%, #262425 100%);
+    gap: 160px;
     color: var(--primary-color);
     font-family: var(--header-font-family);
     font-size: var(--font-l);
     
 }
 
+.footer_contacts {
+    display: flex;
+    gap: 140px;
+}
 .footer_block {
-    padding-top: 17px;
+    padding-top: 14px;
     display: flex;
     flex-direction: column;
     gap: 39px;
 }
 
 .footer_block:nth-child(2){
-    padding-right: 16px;
     gap: 32px;
 }
 
@@ -550,8 +551,3 @@ a .contact_link {
     text-align: center;
 }
 
-@media (min-width: 768px){
-    .hero_section {
-        flex-wrap: wrap;
-    }
-}
