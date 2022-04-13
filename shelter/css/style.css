@@ -544,3 +544,9 @@ a .contact_link {
     border-radius: 50px;
     text-align: center;
 }
+
+@media (min-width: 768px){
+    .hero_section {
+        flex-wrap: wrap;
+    }
+}
