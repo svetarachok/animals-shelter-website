@@ -551,3 +551,98 @@ a .contact_link {
     text-align: center;
 }
 
+@media (max-width: 1279px){
+    section {
+        padding: 80px 30px 100px;
+    }
+
+    .header {
+        padding: 0px 287px;
+        margin-top: 0;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .hero_section {
+        flex-wrap: wrap;
+        padding: 151px 40px 0;
+        gap: 98px;
+    }
+
+    .hero_section_content {
+        padding-top: 0;
+    }
+    .hero_section_content > .btn {
+        align-self: center;
+    }
+
+    .hero_section > img {
+        width: 569px;
+        margin-left: 138px;
+    }
+
+    .about_section {
+        flex-direction: column-reverse;
+        gap: 81px;
+    }
+
+    .pets {
+        gap: 59px;
+    }
+
+    .pets_slider {
+        gap: 12px;
+    }
+
+    .cards {
+        gap: 40px;
+    }
+
+    .card:last-child {
+        display: none;
+    }
+
+    .help {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    
+    .help_items {
+        width: 630px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+        row-gap: 55px;
+        column-gap: 60px;
+    }
+    .donation {
+        flex-direction: column-reverse;
+        gap: 50px;
+        padding-bottom: 92px;
+    }
+    .donation h3 {
+        padding-bottom: 20px;
+        line-height: 45px;
+        padding-right: 60px;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+        background: url(../assets/images/noise_transparent@2x.png), radial-gradient(100% 150% at 0% 0%, #5B483A 0%, #262425 100%);
+        padding-top: 32px;
+        justify-content: center;
+        gap: 65px;
+    }
+
+    .footer_contacts {
+        gap: 40px;
+    }
+
+    .footer_block {
+        width: 300px;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 39px;
+} 
+}
