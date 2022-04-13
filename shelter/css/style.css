@@ -189,17 +189,14 @@ ul {
 /*Header styles*/
 
 .header {
+    position: absolute;
+    margin-top: 30px;
+    padding: 0 40px;
+    width: 1280px;
     height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 60px;
-    padding-left: 40px;
-    padding-right: 40px;
-    background-image: url('../assets/images/hero-screen.jpg');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: auto;
 }
 
 .logo {
@@ -259,7 +256,7 @@ section {
 /*Hero section*/
 
 .hero_section {
-    padding: 60px 40px 0;
+    padding: 180px 40px 0;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -268,7 +265,7 @@ section {
     color: white;
     background-image: url('../assets/images/hero-screen.jpg');
     background-repeat: no-repeat;
-    background-position: center -120px;
+    background-position: center top;
     background-size: auto;
 }
 
@@ -443,7 +440,6 @@ section {
 
 .footer {
     display: flex;
-    /* flex-wrap: wrap; */
     padding: 40px 40px 0;
     background-image: url('../assets/images/footer-bg.jpg');
     background-repeat: no-repeat;
@@ -495,10 +491,18 @@ a .contact_link {
 
 /* Pets Page*/
 
+.pets_page {
+    position: relative;
+    margin-top: 120px;
+    gap: 30px;
+}
+
 .header-transparent {
-    background-image: none;
-    padding-top: 0;
+    position: fixed;
+    z-index: 9;
+    background: white;
     color: var(--dark-header-color);
+    margin-top: 0;
 }
 
 .header-transparent a {
@@ -521,6 +525,7 @@ a .contact_link {
 }
 
 .pets_block {
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -531,7 +536,7 @@ a .contact_link {
 .page_buttons {
     display: flex;
     gap: 20px;
-    padding-top: 3px;
+    padding-top: 29px;
 }
 
 .page_number {
