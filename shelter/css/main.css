@@ -249,7 +249,9 @@ nav.menu {
     color: var(--active-link-color);
 }
 
-
+.burger-icon {
+    display: none;
+}
 
 /* Main */
 
@@ -490,77 +492,13 @@ a .contact_link {
 }
 
 
-/* Pets Page*/
-
-.pets_page {
-    position: relative;
-    margin-top: 120px;
-    gap: 29px;
-    padding-bottom: 96px;
-}
-
-.header-transparent {
-    position: fixed;
-    z-index: 9;
-    background: white;
-    color: var(--dark-header-color);
-    margin-top: 0;
-}
-
-.header-transparent-logo, .header-transparent .nav_item a{
-    color: var(--dark-header-color);
-}
-
-.header-transparent a:hover {
-    color: var(--dark-btn-color);
-}
-
-.header-transparent .subheader_logo{
-    color: var(--dark-btn-color);
-}
-
-.nav_item_active_dark {
-    border-bottom: 2px solid var(--primary-color);
-    transition: 0.5s ease-in-out;  
-    cursor: pointer;  
-    color: var(--dark-btn-color);
-}
-
-.pets_block {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    row-gap: 31px;
-    column-gap: 40px;
-}
-
-.page_buttons {
-    display: flex;
-    gap: 20px;
-    padding-top: 32px;
-}
-
-.page_number {
-    font-family: var(--header-font-family);
-    width: 52px;
-    background-color: var(--primary-color);
-    font-size: var(--font-l);
-    color: var(--dark-btn-color);
-    padding: 12px;
-    border-radius: 50px;
-    text-align: center;
-}
-
 @media (max-width: 1279px){
     section {
         padding: 80px 30px 100px;
     }
 
     .header {
-        padding: 0px 287px;
+        width: 768px;
         margin-top: 0;
         left: 50%;
         transform: translate(-50%);
@@ -651,25 +589,6 @@ a .contact_link {
 .footer_block:nth-child(2) {
     gap: 31px;}
 
-/* Pets page media max 768*/
 
-.pets_page {
-    gap: 28px;
-    padding-bottom: 75px;
-}
-.pets_block {
-    margin-top: 0;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 32px;
-    column-gap: 40px;
-}
-
-.disabled-pet {
-    display: none;
-}
-
-.page_buttons {
-    padding-top: 12px;
-}
 
 }
