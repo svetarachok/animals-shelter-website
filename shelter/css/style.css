@@ -495,7 +495,8 @@ a .contact_link {
 .pets_page {
     position: relative;
     margin-top: 120px;
-    gap: 30px;
+    gap: 29px;
+    padding-bottom: 96px;
 }
 
 .header-transparent {
@@ -506,7 +507,7 @@ a .contact_link {
     margin-top: 0;
 }
 
-.header-transparent a {
+.header-transparent-logo, .header-transparent .nav_item a{
     color: var(--dark-header-color);
 }
 
@@ -522,14 +523,16 @@ a .contact_link {
     border-bottom: 2px solid var(--primary-color);
     transition: 0.5s ease-in-out;  
     cursor: pointer;  
-    color: var(--dark-header-color);
+    color: var(--dark-btn-color);
 }
 
 .pets_block {
     margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
     align-items: center;
+    justify-content: center;
     row-gap: 31px;
     column-gap: 40px;
 }
@@ -537,7 +540,7 @@ a .contact_link {
 .page_buttons {
     display: flex;
     gap: 20px;
-    padding-top: 29px;
+    padding-top: 32px;
 }
 
 .page_number {
@@ -635,7 +638,7 @@ a .contact_link {
     }
 
     .footer_contacts {
-        gap: 40px;
+        gap: 38px;
     }
 
     .footer_block {
@@ -643,6 +646,30 @@ a .contact_link {
         padding-top: 0;
         display: flex;
         flex-direction: column;
-        gap: 39px;
+        gap: 38px;
 } 
+.footer_block:nth-child(2) {
+    gap: 31px;}
+
+/* Pets page media max 768*/
+
+.pets_page {
+    gap: 28px;
+    padding-bottom: 75px;
+}
+.pets_block {
+    margin-top: 0;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 32px;
+    column-gap: 40px;
+}
+
+.disabled-pet {
+    display: none;
+}
+
+.page_buttons {
+    padding-top: 12px;
+}
+
 }
