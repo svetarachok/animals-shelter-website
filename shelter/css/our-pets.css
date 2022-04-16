@@ -1,9 +1,5 @@
 
-.pets_page {
-    margin-top: 120px;
-    gap: 29px;
-    padding-bottom: 96px;
-}
+
 
 .header-transparent {
    top: 0;
@@ -13,32 +9,30 @@
    background-color: white;
 }
 
-.header-transparent > .header__wrapper {
-    max-width: 1200px;
-    margin: auto;
-}
-
 .header-transparent-logo, .header-transparent .nav_item a{
     color: var(--dark-header-color);
 }
 
 .header-transparent a:hover {
-    color: var(--dark-btn-color);
+    color: var(--dark-grey-color);
 }
 
 .header-transparent .subheader_logo{
-    color: var(--dark-btn-color);
+    color: var(--dark-grey-color);
 }
 
 .nav_item_active_dark {
     border-bottom: 2px solid var(--primary-color);
     transition: 0.5s ease-in-out;  
     cursor: pointer;  
-    color: var(--dark-btn-color);
+    color: var(--dark-grey-color);
 }
 
-.pets_block {
-    margin-top: 30px;
+.pets_page {
+    margin-top: 120px;
+    gap: 60px;
+}
+.cards_pets {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
@@ -51,7 +45,6 @@
 .page_buttons {
     display: flex;
     gap: 20px;
-    padding-top: 32px;
 }
 
 .page_number {
@@ -59,7 +52,7 @@
     width: 52px;
     background-color: var(--primary-color);
     font-size: var(--font-l);
-    color: var(--dark-btn-color);
+    color: var(--dark-grey-color);
     padding: 12px;
     border-radius: 50px;
     text-align: center;
@@ -68,28 +61,47 @@
 /* media max 1279*/
 
 @media (max-width: 1279px){
-.header-transparent > .header__wrapper {
-    max-width: 708px;
-
-}
 
 .pets_page {
-    gap: 28px;
+    gap: 30px;
     padding-bottom: 75px;
 }
-.pets_block {
+.cards_pets {
     margin-top: 0;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 32px;
+    row-gap: 31px;
     column-gap: 40px;
 }
 
-.disabled-pet {
+.card:nth-child(n+7) {
     display: none;
 }
 
 .page_buttons {
-    padding-top: 12px;
+    padding-top: 11px;
 }
 }
 
+@media (max-width: 767px)  {
+    .line-dark {
+        background-color: var(--color-back);
+    }
+
+    .pets_page {
+        gap: 42px;
+        padding-bottom: 42px;
+    }
+    .cards_pets {
+        grid-template-columns: 1fr;
+    }
+    
+    .card:nth-child(n+4) {
+        display: none;
+    }
+    
+    .page_buttons {
+       padding-top: 0;
+       gap: 10px;
+    }
+
+}
