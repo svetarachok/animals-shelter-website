@@ -1,22 +1,21 @@
-.header-wrapper {
-    background-color: white;
-    max-width: 1280px;
-    width: 100%;
-    position: fixed;
-    z-index: 9;
-    height: 120px;
-}
 
 .pets_page {
-    position: relative;
     margin-top: 120px;
     gap: 29px;
     padding-bottom: 96px;
 }
 
 .header-transparent {
-    color: var(--dark-header-color);
-    margin-top: 0;
+   top: 0;
+   position: fixed;
+   max-width: 1280px;
+   width: 100%;
+   background-color: white;
+}
+
+.header-transparent > .header__wrapper {
+    max-width: 1200px;
+    margin: auto;
 }
 
 .header-transparent-logo, .header-transparent .nav_item a{
@@ -69,6 +68,10 @@
 /* media max 1279*/
 
 @media (max-width: 1279px){
+.header-transparent > .header__wrapper {
+    max-width: 708px;
+
+}
 
 .pets_page {
     gap: 28px;
@@ -89,3 +92,4 @@
     padding-top: 12px;
 }
 }
+

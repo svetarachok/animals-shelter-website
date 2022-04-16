@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper">
-            <header class="header">
+    <header class="header">
+        <div class="header__wrapper">
             <div class="logo">
                 <a href="#">
                     <h1 class="header_logo">
@@ -37,19 +37,19 @@
                 <span class="line line2"></span>
                 <span class="line line3"></span>
             </div>
-        </header>
-    </div>
+        </div>
+    </header>
+    <section class="hero_section">
+        <div class="hero_section_content">
+            <h2>Not only people need a house</h2>
+            <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+            <button class="btn primary_btn">
+                <a href="#our-friends">Make a friend</a>
+            </button>
+        </div>
+        <img src="../../assets/images/start-screen-puppy.png" alt="Puppy image">
+    </section>
     <main class="main">
-        <section class="hero_section">
-            <div class="hero_section_content">
-                <h2>Not only people need a house</h2>
-                <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-                <button class="btn primary_btn">
-                    <a href="#our-friends">Make a friend</a>
-                </button>
-            </div>
-            <img src="../../assets/images/start-screen-puppy.png" alt="Puppy image">
-        </section>
         <section class="about_section">
             <img src="../../assets/images/about-pets.png" alt="Image of two pets - cat and dog">
             <div class="about_section_content">
@@ -61,10 +61,7 @@
         </section>
         <section id="our-friends" class="pets">
             <h3>Our friends who <br>are looking for a house</h3>
-            <div class="pets_slider">
-                <button class="btn secondary_btn round_btn">
-                    <span class="material-icons left_arrow">arrow_right_alt</span>
-                </button>
+            <div class="pets_slider">         
                 <div class="cards">
                     <div class="card">
                         <img src="../../assets/images/pets-katrine.jpg" alt="Pet Katerine image">
@@ -82,9 +79,14 @@
                         <button class="btn secondary_btn card-btn">Learn more</button>
                     </div>
                 </div>
-                <button class="btn secondary_btn round_btn">
-                    <span class="material-icons">arrow_right_alt</span>
-                </button>
+                <div class="slider__controls">
+                    <button class="btn secondary_btn round_btn slider-control slider-control-prev">
+                        <span class="material-icons left_arrow">arrow_right_alt</span>
+                    </button>
+                    <button class="btn secondary_btn round_btn slider-control slider-control-next">
+                        <span class="material-icons">arrow_right_alt</span>
+                    </button> 
+                </div>
             </div>
             <button class="btn primary_btn"><a href="../pets/index.html">Get to know the rest</a></button>
         </section>
