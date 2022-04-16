@@ -83,8 +83,13 @@
 }
 
 @media (max-width: 767px)  {
+    
     .line-dark {
         background-color: var(--color-back);
+    }
+
+    .menu-light {
+        background-color: var(--color-white);
     }
 
     .pets_page {

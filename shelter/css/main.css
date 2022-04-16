@@ -5,6 +5,7 @@
     --dark-grey-color: #292929;
     --dark-text-color: #4c4c4c;
     --color-back: #000000;
+    --color-white: #ffffff;
     --inactive-link-color: #CDCDCD;
     --active-link-color: #FAFAFA;
     --grey-bg-color: #F6F6F6;
@@ -205,6 +206,7 @@ ul {
 
 .logo {
     text-align: center;
+    z-index: 9;
 }
 
 .logo a {
@@ -595,27 +597,35 @@ a .contact_link {
     h4 {
         font-size: var(--font-s);
     }
-
-    .header {
-        overflow: hidden;
-    }
     
     .header__wrapper {
         padding: 0 53px 0 10px;
+        max-width: 320px;
     }
 
     .menu {
-        width: 320px;
-        background-color: var(--dark-grey-color);
-        height: 100vh;
         position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 320px;
+        height: 100vh;
         top: 0;
+        background-color: var(--dark-grey-color);
         right: -767px;
         z-index: 2;
-        font-size: 35px;
-        line-height: 72.5px;
-        overflow-x: hidden;
-        transition: all 1s ease-in-out;
+        font-size: 32px;
+        line-height: 51.2px;
+        overflow: hidden;
+        transition: all .5s ease-in-out;
+    }
+
+    .nav_items {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 48px;
+        gap: 43px;
     }
 
     .burger-icon {
@@ -624,6 +634,7 @@ a .contact_link {
         gap: 8px;
         width: 30px;
         height: 22px;
+        z-index: 9;
     }
 
     .line {
@@ -643,6 +654,8 @@ a .contact_link {
     .hero_section {
         padding: 150px 10px 0;
         gap: 107px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero_section img {
@@ -663,6 +676,7 @@ a .contact_link {
     }
     
     .about_section_content {
+        max-width: 300px;
         text-align: center;
         padding: 0 15px;
         gap: 23px;
@@ -721,6 +735,7 @@ a .contact_link {
     }
 
     .donation_content {
+        max-width: 280px;
         text-align: center;
         padding-top: 0;
     }
@@ -745,6 +760,10 @@ a .contact_link {
 
     .footer {
         gap: 41px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 0 0 0 ;
     }
 
     .footer_contacts {
