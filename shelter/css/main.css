@@ -2,8 +2,9 @@
     --primary-color: #F1CDB3;
     --primary-light-color: #FDDCC4;
     --dark-header-color: #545454;
-    --dark-btn-color: #292929;
+    --dark-grey-color: #292929;
     --dark-text-color: #4c4c4c;
+    --color-back: #000000;
     --inactive-link-color: #CDCDCD;
     --active-link-color: #FAFAFA;
     --grey-bg-color: #F6F6F6;
@@ -120,7 +121,7 @@ a:hover {
     padding: 15px 45px;
     border: none;
     border-radius: 100px;
-    color: var(--dark-btn-color);
+    color: var(--dark-grey-color);
     letter-spacing: 0.06em;
     line-height: 22px;
     transition: 0.5s ease-in-out;
@@ -128,7 +129,7 @@ a:hover {
 }
 
 .btn a {
-    color: var(--dark-btn-color);
+    color: var(--dark-grey-color);
     transition: 0.5s ease-in-out;    
 }
 
@@ -140,7 +141,7 @@ a:hover {
 
 .round_btn {
     font-size: var(--font-l);
-    color: var(--dark-btn-color);
+    color: var(--dark-grey-color);
     padding: 12px 12px;
     text-align: center;
     display: flex;
@@ -424,7 +425,7 @@ section {
 }
 
 .donation_content a {
-    color: var(--dark-btn-color);
+    color: var(--dark-grey-color);
 }
 .donation_credit_card {
     display: flex;
@@ -487,7 +488,7 @@ section {
 }
 
 a .contact_link {
-    color: var(--dark-btn-color);
+    color: var(--dark-grey-color);
 }
 
 .footer a:hover {
@@ -543,7 +544,7 @@ a .contact_link {
         gap: 40px;
     }
 
-    .card:last-child {
+    .slider-item:last-child {
         display: none;
     }
 
@@ -605,7 +606,7 @@ a .contact_link {
 
     .menu {
         width: 320px;
-        background-color: var(--dark-btn-color);
+        background-color: var(--dark-grey-color);
         height: 100vh;
         position: fixed;
         top: 0;
@@ -683,7 +684,7 @@ a .contact_link {
         gap: 19px;
     }
 
-    .card:nth-child(2) {
+    .slider-item:nth-child(2) {
         display: none;
     }
 
@@ -745,6 +746,7 @@ a .contact_link {
     .footer {
         gap: 41px;
     }
+
     .footer_contacts {
         flex-direction: column;
         gap: 42px;
