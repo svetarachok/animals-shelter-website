@@ -7,92 +7,93 @@
     <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
     <title>Shelter Pets</title>
     <link rel="stylesheet" href="../../css/normalize.css">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/our-pets.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header class="header header-transparent">
-        <div class="logo">
-            <a href="../main/index.html">
-                <h1 class="header_logo header-transparent-logo">
-                    Cozy House
-                 </h1>
-                <p class="subheader_logo">
-                    Shelter for pets in Boston
-                </p>
-            </a> 
+        <div class="header__wrapper">
+            <div class="logo">
+                <a href="../main/index.html">
+                    <h1 class="header_logo header-transparent-logo">
+                        Cozy House
+                    </h1>
+                    <p class="subheader_logo">
+                        Shelter for pets in Boston
+                    </p>
+                </a> 
+            </div>
+            <nav class="menu">
+                <ul class="nav_items">
+                    <li class="nav_item"><a href="../main/index.html">About the shelter</a></li>
+                    <li class="nav_item nav_item_active_dark">Our pets</li>
+                    <li class="nav_item"><a href="../main/index.html#help">Help the shelter</a></li>
+                    <li class="nav_item"><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>  
+        </div> 
+    </header>   
+    <section class="pets pets_page">
+        <h3>Our friends who <br>are looking for a house</h3>
+        <div class="pets_block">
+                <div class="card">
+                    <img src="../../assets/images/pets-katrine.jpg" alt="Pet Katerine image">
+                    <p class="card_name">Katrine</p>
+                    <button class="btn secondary_btn card-btn">Learn more</button>                        
+                </div>
+                <div class="card">
+                    <img src="../../assets/images/pets-jennifer.jpg" alt="Pet Jennifer image">
+                    <p class="card_name">Jennifer</p>
+                    <button class="btn secondary_btn card-btn">Learn more</button>
+                </div>
+                <div class="card">
+                    <img src="../../assets/images/pets-woody.jpg" alt="Pet Woody image">
+                    <p class="card_name">Woody</p>
+                    <button class="btn secondary_btn card-btn">Learn more</button>
+                </div>
+                <div class="card">
+                    <img src="../../assets/images/pets-sophia.jpg" alt="Pet Sophia image">
+                    <p class="card_name">Sophia</p>
+                    <button class="btn secondary_btn card-btn">Learn more</button>
+                </div>
+                <div class="card">
+                    <img src="../../assets/images/pets-timmy.jpg" alt="Pet Timmy image">
+                    <p class="card_name">Timmy</p>
+                    <button class="btn secondary_btn card-btn">Learn more</button>
+                </div>
+                <div class="card">
+                    <img src="../../assets/images/pets-charly.jpg" alt="Pet Charly image">
+                    <p class="card_name">Charly</p>
+                    <button class="btn secondary_btn card-btn">Learn more</button>
+                </div>
+                <div class="card disabled-pet">
+                    <img src="../../assets/images/pets-scarlet.jpg" alt="Pet Scarlett image">
+                    <p class="card_name">Scarlett</p>
+                    <button class="btn secondary_btn card-btn">Learn more</button>
+                </div>
+                <div class="card">
+                    <img src="../../assets/images/pets-freddie.jpg" alt="Pet Freddie image">
+                    <p class="card_name">Freddie</p>
+                    <button class="btn secondary_btn card-btn">Learn more</button>
+                </div>
         </div>
-        <nav class="menu">
-            <ul class="nav_items">
-                <li class="nav_item"><a href="../main/index.html">About the shelter</a></li>
-                <li class="nav_item nav_item_active_dark">Our pets</li>
-                <li class="nav_item"><a href="../main/index.html#help">Help the shelter</a></li>
-                <li class="nav_item"><a href="#contacts">Contacts</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="main">
-        <section class="pets pets_page">
-            <h3>Our friends who <br>are looking for a house</h3>
-            <div class="pets_block">
-                    <div class="card">
-                        <img src="../../assets/images/pets-katrine.jpg" alt="Pet Katerine image">
-                        <p class="card_name">Katrine</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>                        
-                    </div>
-                    <div class="card">
-                        <img src="../../assets/images/pets-jennifer.jpg" alt="Pet Jennifer image">
-                        <p class="card_name">Jennifer</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>
-                    </div>
-                    <div class="card">
-                        <img src="../../assets/images/pets-woody.jpg" alt="Pet Woody image">
-                        <p class="card_name">Woody</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>
-                    </div>
-                    <div class="card">
-                        <img src="../../assets/images/pets-sophia.jpg" alt="Pet Sophia image">
-                        <p class="card_name">Sophia</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>
-                    </div>
-                    <div class="card">
-                        <img src="../../assets/images/pets-timmy.jpg" alt="Pet Timmy image">
-                        <p class="card_name">Timmy</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>
-                    </div>
-                    <div class="card">
-                        <img src="../../assets/images/pets-charly.jpg" alt="Pet Charly image">
-                        <p class="card_name">Charly</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>
-                    </div>
-                    <div class="card disabled-pet">
-                        <img src="../../assets/images/pets-scarlet.jpg" alt="Pet Scarlett image">
-                        <p class="card_name">Scarlett</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>
-                    </div>
-                    <div class="card">
-                        <img src="../../assets/images/pets-freddie.jpg" alt="Pet Freddie image">
-                        <p class="card_name">Freddie</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>
-                    </div>
-            </div>
-            <div class="page_buttons">
-                <button class="btn secondary_btn round_btn inactive_btn" disabled="disabled">
-                    <span class="material-icons">keyboard_double_arrow_left</span>
-                </button>
-                <button class="btn secondary_btn round_btn inactive_btn">
-                    <span class="material-icons">keyboard_arrow_left</span>
-                </button>
-                <div class="page_number">1 </div>
-                <button class="btn secondary_btn round_btn">
-                    <span class="material-icons">keyboard_arrow_right</span>
-                </button>
-                <button class="btn secondary_btn round_btn">
-                    <span class="material-icons">keyboard_double_arrow_right</span>
-                </button>
-            </div>
-        </section>
-    </main>
+        <div class="page_buttons">
+            <button class="btn secondary_btn round_btn inactive_btn" disabled="disabled">
+                <span class="material-icons">keyboard_double_arrow_left</span>
+            </button>
+            <button class="btn secondary_btn round_btn inactive_btn">
+                <span class="material-icons">keyboard_arrow_left</span>
+            </button>
+            <div class="page_number">1 </div>
+            <button class="btn secondary_btn round_btn">
+                <span class="material-icons">keyboard_arrow_right</span>
+            </button>
+            <button class="btn secondary_btn round_btn">
+                <span class="material-icons">keyboard_double_arrow_right</span>
+            </button>
+        </div>
+    </section>
     <footer id="contacts" class="footer">
         <div class="footer_contacts">
             <div class="footer_block">
