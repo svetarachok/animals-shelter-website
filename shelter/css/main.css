@@ -317,7 +317,6 @@ section {
 
 .pets h3 {
     text-align: center;
-    padding-top: 1px;
 }
 
 .pets_slider {
@@ -374,15 +373,6 @@ section {
     top: 50%;
     transform: translateY(-50%);
 }
-
-/* .slider-control-prev {
-    left: 120px;;
-}
-
-.slider-control-next {
-    right: 120px;
-} */
-
 
 /*Help items*/
 .help h3 {
@@ -454,7 +444,7 @@ section {
 
 .footer {
     display: flex;
-    padding: 45px 40px 0;
+    padding: 43px 40px 0;
     background: url(../assets/images/noise_transparent@2x.png), radial-gradient(100% 150% at 0% 0%, #5B483A 0%, #262425 100%);
     gap: 160px;
     color: var(--primary-color);
@@ -471,11 +461,11 @@ section {
     padding-top: 14px;
     display: flex;
     flex-direction: column;
-    gap: 39px;
+    gap: 40px;
 }
 
 .footer_block:nth-child(2){
-    gap: 32px;
+    gap: 33px;
 }
 
 .footer_header {
@@ -565,7 +555,7 @@ a .contact_link {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         margin: 0 auto;
-        row-gap: 55px;
+        row-gap: 56px;
         column-gap: 60px;
     }
     .donation {
@@ -574,7 +564,7 @@ a .contact_link {
         padding-bottom: 92px;
     }
     .donation h3 {
-        padding-bottom: 20px;
+        padding-bottom: 19px;
         line-height: 45px;
         padding-right: 60px;
     }
@@ -596,5 +586,5 @@ a .contact_link {
         padding-top: 0;
 } 
 
-
 }
+
