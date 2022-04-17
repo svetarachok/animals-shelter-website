@@ -1,6 +1,4 @@
 
-
-
 .header-transparent {
    top: 0;
    position: fixed;
@@ -8,6 +6,15 @@
    width: 100%;
    background-color: var(--color-white);
    padding: 0 2.8%;
+}
+
+.header-transparent-wrapper {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .header-transparent-logo, .header-transparent .nav_item a{
@@ -63,6 +70,11 @@
 
 @media (max-width: 1279px){
 
+.header-transparent-wrapper {
+    max-width: 708px;
+    width: 100%;
+}
+
 .pets_page {
     gap: 30px;
     padding-bottom: 75px;
@@ -84,6 +96,10 @@
 }
 
 @media (max-width: 767px)  {
+
+    .header-transparent-wrapper {
+        max-width: 300px;
+    }
     
     .line-dark, .line-dark::after, .line-dark::before {
         background-color: var(--color-back);
