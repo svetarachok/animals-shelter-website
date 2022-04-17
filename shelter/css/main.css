@@ -188,20 +188,19 @@ ul {
 }
 
 /*Header styles*/
-.header {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 1200px;
-    width: 100%;
+
+.wrapper_dark-bg {
+    background: url(../assets/images/noise_transparent@2x.png), radial-gradient(100% 150% at 0% 0%, #5B483A 0%, #262425 100%)
 }
-.header__wrapper {
+
+.header {   
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 120px;
     margin: auto;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .logo {
@@ -271,7 +270,6 @@ section {
     flex-wrap: wrap;
     gap: 42px;
     color: var(--color-white);
-    background: url(../assets/images/noise_transparent@2x.png), radial-gradient(100% 150% at 0% 0%, #5B483A 0%, #262425 100%)
 }
 
 .hero_section_content {
@@ -504,16 +502,12 @@ a .contact_link {
     }
 
     .header {
-        top: 0;
-    }
-    
-    .header__wrapper {
         max-width: 708px;
     }
 
     .hero_section {
         flex-wrap: wrap;
-        padding: 151px 40px 0;
+        padding: 31px 40px 0;
         gap: 100px;
     }
 
@@ -597,10 +591,11 @@ a .contact_link {
     h4 {
         font-size: var(--font-s);
     }
-    
-    .header__wrapper {
-        padding: 0 53px 0 10px;
+
+    .header {
         max-width: 320px;
+        padding: 0 10px;
+        overflow-x: hidden;
     }
 
     .menu {
@@ -612,11 +607,11 @@ a .contact_link {
         height: 100vh;
         top: 0;
         background-color: var(--dark-grey-color);
-        right: -767px;
+        right: -320px;
         z-index: 2;
         font-size: 32px;
         line-height: 51.2px;
-        overflow: hidden;
+        overflow-x: hidden;
         transition: all .5s ease-in-out;
     }
 
@@ -629,18 +624,34 @@ a .contact_link {
     }
 
     .burger-icon {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+        display: inline-block;
+        position: relative;
         width: 30px;
         height: 22px;
+        margin-right: 43px;
         z-index: 9;
+        cursor: pointer;
+        transition: 0.5s;
     }
 
-    .line {
-        width: 30px;
-        height: 2px;
+    .burger-line, .burger-line::before, .burger-line::after{
+        display: inline-block;
+        position: absolute;
         background-color: var(--primary-color);
+        height: 2px;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .burger-line::before {
+        content: "";
+        margin-top: 10px;
+    }
+
+    .burger-line::after {
+        content: "";
+        margin-top: -10px;
     }
 
     /* Sections @media max-width 767px*/
@@ -652,7 +663,7 @@ a .contact_link {
     }
 
     .hero_section {
-        padding: 150px 10px 0;
+        padding: 30px 10px 0;
         gap: 107px;
         flex-direction: column;
         align-items: center;
@@ -751,7 +762,7 @@ a .contact_link {
 
     .donation_credit_card {
         margin: 24px auto 19px;
-        gap: 14px;
+        gap: 13px;
     }
 
     .donation .subtext {
