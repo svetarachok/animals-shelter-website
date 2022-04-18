@@ -69,6 +69,9 @@
 /* media max 1279*/
 
 @media (max-width: 1279px){
+.header-transparent {
+    padding: 0 30px;
+    }
 
 .header-transparent-wrapper {
     max-width: 708px;
@@ -96,6 +99,9 @@
 }
 
 @media (max-width: 767px)  {
+    .header-transparent {
+        padding: 0 10px;
+        }    
 
     .header-transparent-wrapper {
         max-width: 300px;
