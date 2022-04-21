@@ -617,7 +617,7 @@ a .contact_link {
         font-size: 32px;
         line-height: 51.2px;
         overflow-x: hidden;
-        transition: all .5s ease-in-out;
+        transition: all .8s ease-in-out;
     }
 
     .nav_items {
@@ -669,9 +669,15 @@ a .contact_link {
     }
 
     .shadowed {
-        width: 100%;
-        height: 100%;
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
         z-index: 2;
+        background:rgba(0,0,0,.7);
+        transition: 0.5s;
     }
 
     /* Sections @media max-width 767px*/
