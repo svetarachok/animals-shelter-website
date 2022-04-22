@@ -322,7 +322,7 @@ section {
     text-align: center;
 }
 
-.pets_slider {
+.slider-wrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -330,10 +330,17 @@ section {
     gap: 53px;
 }
 
-.cards {
+.slider-container {
+    overflow: hidden;
+    width: 990px;
+}
+
+.slider {
     display: flex;
     align-items: center;
     gap: 90px;
+    position: relative;
+    left: -1080px;
 }
 
 .card {
@@ -537,11 +544,15 @@ a .contact_link {
         gap: 60px;
     }
 
-    .pets_slider {
+    .slider-wrapper {
         gap: 12px;
     }
 
-    .cards {
+    .slider-container {
+        width: 580px;
+    }
+
+    .slider {
         gap: 40px;
     }
 
@@ -734,8 +745,12 @@ a .contact_link {
         gap: 43px;
     }
 
-    .pets_slider {
+    .slider-wrapper {
         gap: 19px;
+    }
+
+    .slider-container {
+        width: 270px;
     }
 
     .slider-item:nth-child(2) {
