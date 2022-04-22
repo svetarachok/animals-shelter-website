@@ -5,16 +5,18 @@ const overlay = document.querySelector('.overlay')
 
 console.log(menuLinks)
 
-let openMenu = () => {
+const openMenu = () => {
     burgerMenu.classList.add('clicked');
     menu.classList.add('opened');
-    overlay.classList.add('shadowed')
+    overlay.classList.add('shadowed');
+    document.body.classList.add('hidden-overflow')
 }
 
-let closeMenu = () => {
+const closeMenu = () => {
     burgerMenu.classList.remove('clicked');
     menu.classList.remove('opened');
-    overlay.classList.remove('shadowed')
+    overlay.classList.remove('shadowed');
+    document.body.classList.remove('hidden-overflow')
 }
 
 burgerMenu.addEventListener('click', function() {
@@ -25,3 +27,4 @@ menuLinks.forEach(item => {
         item.addEventListener('click', closeMenu)
 })
 
+overlay.addEventListener('click', closeMenu)
