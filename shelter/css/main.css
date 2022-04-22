@@ -554,6 +554,7 @@ a .contact_link {
 
     .slider {
         gap: 40px;
+        left: -620px;
     }
 
     .slider-item:last-child {
@@ -751,6 +752,10 @@ a .contact_link {
 
     .slider-container {
         width: 270px;
+    }
+
+    .slider {
+        left: -310px;
     }
 
     .slider-item:nth-child(2) {
