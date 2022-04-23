@@ -35,10 +35,11 @@
     src: url("../assets/fonts/Arial-Italic.woff2") format("woff2");
   }
 
-  @font-face { 
+@font-face { 
     font-family: "Georgia";
     src: url("../assets/fonts/Georgia.woff2") format("woff2");
   }
+
 
 html {
   scroll-behavior: smooth;
@@ -307,7 +308,30 @@ section {
     max-width: 310px;
 }
 
-/*Our friends section*/
+/*Our friends section, SLIDER*/
+/* slider animation styles*/
+
+@keyframes move-right {
+    from {left: 1080px}
+    to {left: 0px}
+}
+
+@keyframes move-left {
+    from {left: -1080px}
+    to {left: 0px}
+}
+
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 5s;
+}
+
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 5s;
+}
+
+/*section Our friends styles*/
 
 .pets {
     display: flex;
@@ -335,13 +359,16 @@ section {
     width: 990px;
 }
 
+.slider-left, .slider-center, .slider-right {
+    display: flex;
+    gap: 90px;
+}
+
 .slider {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 90px;
     position: relative;
-    /* left: -1080px; */
+    left: -1080px;
+    gap: 90px;
 }
 
 .card {
@@ -755,9 +782,9 @@ a .contact_link {
         width: 270px;
     }
 
-    .slider {
-        /* left: -310px; */
-    }
+    /* .slider {
+        left: -310px;
+    } */
 
     .slider-item:nth-child(2) {
         display: none;
