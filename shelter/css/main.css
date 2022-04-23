@@ -312,13 +312,13 @@ section {
 /* slider animation styles*/
 
 @keyframes move-right {
-    from {left: 1080px}
-    to {left: 0px}
+    from {left: -540px}
+    to {left: -1620px}
 }
 
 @keyframes move-left {
-    from {left: -1080px}
-    to {left: 0px}
+    from {left: -540px}
+    to {left: 540px}
 }
 
 .transition-right {
@@ -367,7 +367,7 @@ section {
 .slider {
     display: flex;
     position: relative;
-    left: -1080px;
+    left: -540px;
     gap: 90px;
 }
 

@@ -109,9 +109,18 @@ const moveRight = () => {
 BTN_SLIDER_LEFT.addEventListener('click', moveLeft)
 BTN_SLIDER_RIGHT.addEventListener('click', moveRight)
 
-SLIDER.addEventListener('animationend', () => {
-    SLIDER.classList.remove('transition-left');
-    SLIDER.classList.remove('transition-right');
+SLIDER.addEventListener('animationend', (e) => {
+    let leftSliderCards = document.querySelector('.slider-left').innerHTML;
+    let rightSliderCards = document.querySelector('.slider-right').innerHTML;
+    if (e.animationName === "move-left") {
+        SLIDER.classList.remove('transition-left');
+        document.querySelector('.slider-center').innerHTML = leftSliderCards;
+    } else {
+        SLIDER.classList.remove('transition-right');
+        document.querySelector('.slider-center').innerHTML = rightSliderCards;
+    }
+    
+    
     BTN_SLIDER_LEFT.addEventListener('click', moveLeft);
     BTN_SLIDER_RIGHT.addEventListener('click', moveRight);   
 })
