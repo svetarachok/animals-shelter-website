@@ -63,7 +63,7 @@ const renderSliderCards = (dataArray) => {
     }
 }
 
-renderSliderCards(petsDataArray)
+// renderSliderCards(petsDataArray)
 
 
 

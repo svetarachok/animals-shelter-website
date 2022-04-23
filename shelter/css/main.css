@@ -338,9 +338,10 @@ section {
 .slider {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 90px;
     position: relative;
-    left: -1080px;
+    /* left: -1080px; */
 }
 
 .card {
@@ -554,7 +555,7 @@ a .contact_link {
 
     .slider {
         gap: 40px;
-        left: -620px;
+        /* left: -620px; */
     }
 
     .slider-item:last-child {
@@ -755,7 +756,7 @@ a .contact_link {
     }
 
     .slider {
-        left: -310px;
+        /* left: -310px; */
     }
 
     .slider-item:nth-child(2) {
