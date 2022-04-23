@@ -34,12 +34,12 @@ overlay.addEventListener('click', closeMenu)
 //Main page slider
 
 const getData = async (url) => await ( await fetch (url)).json();
-const petsDataArray = await getData('../../js/pets.json')
+const ALL_PETS_DATA = await getData('../../js/pets.json')
 const BTN_SLIDER_LEFT = document.querySelector('#btn-slider-left');
 const BTN_SLIDER_RIGHT = document.querySelector('#btn-slider-right');
 const SLIDER = document.querySelector('#slider');
 
-console.log(petsDataArray)
+console.log(ALL_PETS_DATA)
 
 // const clearSlidesContainer = () => {
 //     const slidesContainer = document.querySelectorAll('.slider > .slider')
@@ -53,7 +53,19 @@ const clearSlidesContainer = (position) => {
     return slidesContainer
 }
 
-const generateCards = (data) => {
+//* get array of visible cards id
+
+const getVisibleCardsIDArray = (array) => {
+    let result = []; 
+    for (let i=0; i<array.length; i++) {
+    result.push(+array[i].dataset.id)
+    }
+return result
+}
+
+//* generate cards bundle function
+
+const generateCards = (data) => {    
     let cards = [];
     data.forEach(card => {
         cards.push(new Card(card))
@@ -61,46 +73,47 @@ const generateCards = (data) => {
     return cards;
 }
 
+// * current Cards bundle
+const cardsArray = generateCards(ALL_PETS_DATA);
 
-const renderSliderCards = (dataArray) => {
-    let slider = clearSlidesContainer();
-    let cardsArray = generateCards(dataArray);
-    console.log(cardsArray)
-    for(let i = 0; i < 3; i++) {
-        slider.forEach(container => container.append(cardsArray[i].generateCard()))
+// function getRandomCards - gets 3 random cards not equal to itself or visible slider cards
+
+const getRandomCards = (cardsTotalAmount, cardsNumber) => {
+    let result = [];
+    let visibleCardsArrayId = getVisibleCardsIDArray(document.querySelectorAll('.slider-center > .card'))  
+    const rand = () => Math.floor(Math.random() * cardsTotalAmount);
+    for(let i = 0; i < cardsNumber; i++) {
+        let randCardNumber = rand();
+        let card = cardsArray[randCardNumber];
+        if (!visibleCardsArrayId.includes(randCardNumber+1) && !result.includes(card)) {
+            result.push(card)
+        } else {
+            i-- 
+        }
     }
+    return result   
 }
 
-// renderSliderCards(petsDataArray)
 
-// let arr = [1, 2, 3, 4, 5, 6, 7, 8];
-// let arrPrev = [2, 6, 8];
+const renderSliderCards = (data, position, cardsNumber) => {
+    let sliderContainer = clearSlidesContainer(position);
+    let newCards = getRandomCards(data.length, cardsNumber);
+    newCards.forEach(card => sliderContainer.append(card.generateCard()))
+    return sliderContainer
+}
 
-// const generateArr = (arr) => {
-//     let arrPrev = [2, 6, 8];
-//     let arrNew = [];
-//     const rand = () => Math.floor(Math.random() * arr.length);
-    
-//     for (let i = 0; i < 3; i++) {        
-//         let randCardnumber = rand();
-//         if (!arrPrev.includes(randCardnumber) && !arrNew.includes(randCardnumber)) {
-//             arrNew.push(randCardnumber)
-//         } else {
-//            i-- 
-//         }
-//     }
-//     return arrNew
-// }
 
-// generateArr(arr)
+//* slider moves 
 
 const moveLeft = () => {
+    renderSliderCards(ALL_PETS_DATA, 'left', 3);
     SLIDER.classList.add(`transition-left`)
     BTN_SLIDER_LEFT.removeEventListener('click', moveLeft)
     BTN_SLIDER_RIGHT.removeEventListener('click', moveRight)
 }
 
 const moveRight = () => {
+    renderSliderCards(ALL_PETS_DATA, 'right', 3);
     SLIDER.classList.add(`transition-right`)
     BTN_SLIDER_LEFT.removeEventListener('click', moveLeft)
     BTN_SLIDER_RIGHT.removeEventListener('click', moveRight)
@@ -118,8 +131,7 @@ SLIDER.addEventListener('animationend', (e) => {
     } else {
         SLIDER.classList.remove('transition-right');
         document.querySelector('.slider-center').innerHTML = rightSliderCards;
-    }
-    
+    }  
     
     BTN_SLIDER_LEFT.addEventListener('click', moveLeft);
     BTN_SLIDER_RIGHT.addEventListener('click', moveRight);   
