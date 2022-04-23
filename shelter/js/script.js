@@ -38,10 +38,10 @@ const petsDataArray = await getData('../../js/pets.json')
 
 console.log(petsDataArray)
 
-const getSliderContainer = () => {
-    const sliderContainer = document.querySelectorAll('.slider > .slider')
-    sliderContainer.forEach(container => container.innerHTML = '');
-    return sliderContainer
+const clearSlidesContainer = () => {
+    const slidesContainer = document.querySelectorAll('.slider > .slider')
+    slidesContainer.forEach(container => container.innerHTML = '');
+    return slidesContainer
 }
 
 const generateCards = (data) => {
@@ -52,16 +52,18 @@ const generateCards = (data) => {
     return cards;
 }
 
-const renderSliderCards = () => {
-    let slider = getSliderContainer();
-    let cardsArray = generateCards(petsDataArray)
+let getRandom = () => Math.floor(Math.random()*8);
+
+const renderSliderCards = (dataArray) => {
+    let slider = clearSlidesContainer();
+    let cardsArray = generateCards(dataArray);
     console.log(cardsArray)
     for(let i = 0; i < 3; i++) {
-        slider.forEach(container => container.append(cardsArray[i].generateCard()))
+        slider.forEach(container => container.append(cardsArray[`${getRandom()}`].generateCard()))
     }
 }
 
-renderSliderCards()
+renderSliderCards(petsDataArray)
 
 
 
