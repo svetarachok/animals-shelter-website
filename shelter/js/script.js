@@ -1,6 +1,8 @@
 import {Card} from './Card.js'
 import {Modal} from './Modal.js'
 
+
+
 const burgerMenu = document.querySelector('.burger-icon');
 const menuLinks = document.querySelectorAll('.nav_item');
 const menu = document.querySelector('.menu');
@@ -129,5 +131,26 @@ SLIDER.addEventListener('animationend', (e) => {
     BTN_SLIDER_RIGHT.addEventListener('click', moveRight);   
 })
 
-// modal
+// Modal window
 
+document.querySelector('.slider-center').addEventListener('click', (e) => {
+    if (e.target.closest('.card')) {
+        let clickedCardID = e.target.closest('.card').getAttribute('data-id')
+        let clickedModalData = getClickedModalData(clickedCardID)
+
+        renderModalAtPage(clickedModalData)
+    }
+})
+
+
+const getClickedModalData = (id) => {
+    return ALL_PETS_DATA.find(pet => pet.id == id)
+}
+
+const renderModalAtPage = (pet) => {
+    let modal = new Modal(pet);
+    modal.renderModal()
+    return modal
+}
+
+//

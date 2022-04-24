@@ -7,7 +7,6 @@ export class Card {
 
     // Card generator
     generateCard () {
-        // this.id = id;
         let template = '';
         let card = document.createElement('div');
         card.className = 'card slider-item';
