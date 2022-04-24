@@ -14,19 +14,48 @@ export class Modal {
 
     generateModal () {
         let template = '';
-        let card = document.createElement('div');
-        card.className = 'card slider-item';
-        card.setAttribute('data-id', this.id)
+        let modal = document.createElement('div');
+        modal.className = 'modal_overlay';
+        modal.setAttribute('data-modal-id', this.id)
+
+        template += `div class="modal_wrapper"`
+
+        template += `<button class="btn_modal"> <span class="material-icons btn-cross">close</span> </button>`
 
         this.img &&
-        (template += `<img src=${this.img} alt="Pet image">`)
+        (template += `<img src=${this.img} alt="Pet image at modal window">`)
+
+        template += `<div class="modal_content">`
 
         this.name &&
-        (template += `<p class="card_name">${this.name}</p>`)
+        (template += `<h3 class="modal-header">${this.name}</h3>`)
 
-        template += `<button class="btn secondary_btn card-btn">Learn more</button>`
+        (this.type && this.breed) &&
+        (template += `<h4 class="modal-subheader">${this.type} - ${this.breed}</h4>`)
 
-        card.innerHTML = template;
+        this.description &&
+        (template += `<p>${this.description}</p>`)
+
+        template += `<ul class="modal_list">`
+
+        this.age &&
+        (template += `<li><b>Age:</b> ${this.age}</li>`)
+
+        this.inoculations &&
+        (template += `<li><b>Inoculations:</b> ${this.inoculations}</li>`)
+
+        this.diseases &&
+        (template += `<li><b>Diseases:</b> ${this.diseases}</li>`)
+
+        this.parasites &&
+        (template += `<li><b>Parasites:</b> ${this.parasites}</li>`)
+        
+        template += `</ul>`
+        
+        template += `</div>`
+        template += `</div>`
+
+        modal.innerHTML = template;
         return card
     }
 
