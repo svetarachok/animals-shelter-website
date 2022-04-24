@@ -1,4 +1,5 @@
-import {Card} from '../js/Card.js'
+import {Card} from './Card.js'
+import {Modal} from './Modal.js'
 
 const burgerMenu = document.querySelector('.burger-icon');
 const menuLinks = document.querySelectorAll('.nav_item');
@@ -39,13 +40,6 @@ const BTN_SLIDER_LEFT = document.querySelector('#btn-slider-left');
 const BTN_SLIDER_RIGHT = document.querySelector('#btn-slider-right');
 const SLIDER = document.querySelector('#slider');
 
-console.log(ALL_PETS_DATA)
-
-// const clearSlidesContainer = () => {
-//     const slidesContainer = document.querySelectorAll('.slider > .slider')
-//     slidesContainer.forEach(container => container.innerHTML = '');
-//     return slidesContainer
-// }
 
 const clearSlidesContainer = (position) => {
     const slidesContainer = document.querySelector(`.slider-${position}`)
@@ -57,10 +51,8 @@ const clearSlidesContainer = (position) => {
 
 const getVisibleCardsIDArray = (array) => {
     let result = []; 
-    for (let i=0; i<array.length; i++) {
-    result.push(+array[i].dataset.id)
-    }
-return result
+    array.forEach(card => result.push(+card.getAttribute('data-id')));
+    return result
 }
 
 //* generate cards bundle function
@@ -78,14 +70,14 @@ const cardsArray = generateCards(ALL_PETS_DATA);
 
 // function getRandomCards - gets 3 random cards not equal to itself or visible slider cards
 
-const getRandomCards = (cardsTotalAmount, cardsNumber) => {
+const getRandomCards = (cardsTotalNumber, cardsRequiredNumber) => {
     let result = [];
-    let visibleCardsArrayId = getVisibleCardsIDArray(document.querySelectorAll('.slider-center > .card'))  
-    const rand = () => Math.floor(Math.random() * cardsTotalAmount);
-    for(let i = 0; i < cardsNumber; i++) {
+    let visibleCardsIDArray = getVisibleCardsIDArray(document.querySelectorAll('.slider-center > .card'))  
+    const rand = () => Math.floor(Math.random() * cardsTotalNumber);
+    for(let i = 0; i < cardsRequiredNumber; i++) {
         let randCardNumber = rand();
         let card = cardsArray[randCardNumber];
-        if (!visibleCardsArrayId.includes(randCardNumber+1) && !result.includes(card)) {
+        if (!visibleCardsIDArray.includes(randCardNumber+1) && !result.includes(card)) {
             result.push(card)
         } else {
             i-- 
@@ -103,7 +95,7 @@ const renderSliderCards = (data, position, cardsNumber) => {
 }
 
 
-//* slider moves 
+// slider moves 
 
 const moveLeft = () => {
     renderSliderCards(ALL_PETS_DATA, 'left', 3);
@@ -136,4 +128,6 @@ SLIDER.addEventListener('animationend', (e) => {
     BTN_SLIDER_LEFT.addEventListener('click', moveLeft);
     BTN_SLIDER_RIGHT.addEventListener('click', moveRight);   
 })
+
+// modal
 

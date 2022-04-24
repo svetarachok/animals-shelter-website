@@ -10,12 +10,15 @@
     --active-link-color: #FAFAFA;
     --grey-bg-color: #F6F6F6;
     --light-grey-color: #fafafa;
+    --overlay-color: rgba(41, 41, 41, 0.6);
+
     --font-xl: 35px;
     --font-l: 20px;
     --font-m: 17px;
     --font-s: 15px;
     --header-font-family: 'Georgia', serif;
     --italic-text: "Arial Italic", sans-serif;
+
     --slider-animation-step: 540px;
     --slider-animation-step-left: -540px;
     --slider-animation-step-right: -1620px;
@@ -43,6 +46,18 @@
     src: url("../assets/fonts/Georgia.woff2") format("woff2");
   }
 
+/*animation*/
+@keyframes move-right {
+    from {left: var(--slider-animation-step-left)}
+    to {left: var(--slider-animation-step-right)}
+}
+
+@keyframes move-left {
+    from {left: var(--slider-animation-step-left)}
+    to {left: var(--slider-animation-step)}
+}
+
+/*basic elements styles*/
 
 html {
   scroll-behavior: smooth;
@@ -191,6 +206,88 @@ ul {
     list-style: none;
 }
 
+/*Modal window*/
+
+.modal_overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--overlay-color);
+    cursor: pointer;
+    display: none;
+}
+
+.modal_wrapper {
+    position: absolute;
+    width: 900px;
+    height: auto;
+    display: flex;
+    background-color: var(--light-grey-color);
+    border-radius: 9px;
+    z-index: 3;
+    cursor: default;
+}
+
+.modal_img {
+    border-radius: 9px;
+    width: 500px;
+    height: 100%;
+}
+
+.modal_content {
+    color: var(--color-back);
+    width: 350px;
+    align-self: center;
+    margin: 0 20px;
+}
+
+.modal-header, .modal-subheader {
+    color: var(--color-back);
+}
+
+.modal-header {
+    padding-bottom: 10px;
+}
+
+.modal_content p {
+    padding: 40px 0;
+}
+
+.modal_list {
+    list-style: disc;
+    padding-left: 15px;;
+}
+
+.modal_list li::marker {
+    color: var(--primary-color);
+}
+
+.btn_modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    background: transparent;
+    right: -52px;
+    top: -52px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.btn_modal:hover {
+    background-color: var(--primary-color);
+}
+
+
 /*Header styles*/
 
 .wrapper_dark-bg {
@@ -313,17 +410,6 @@ section {
 
 /*Our friends section, SLIDER*/
 /* slider animation styles*/
-
-@keyframes move-right {
-    from {left: var(--slider-animation-step-left)}
-    to {left: var(--slider-animation-step-right)}
-}
-
-@keyframes move-left {
-    from {left: var(--slider-animation-step-left)}
-    to {left: var(--slider-animation-step)}
-}
-
 .transition-right {
     animation-name: move-right;
     animation-duration: 3s;
@@ -734,7 +820,7 @@ a .contact_link {
         top: 0;
         left: 0;
         z-index: 2;
-        background: rgba(41, 41, 41, 0.6);
+        background: var(--overlay-color);
         transition: 0.5s;
     }
 
