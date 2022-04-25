@@ -88,14 +88,12 @@ const getRandomCards = (cardsTotalNumber, cardsRequiredNumber) => {
     return result   
 }
 
-
 const renderSliderCards = (data, position, cardsNumber) => {
     let sliderContainer = clearSlidesContainer(position);
     let newCards = getRandomCards(data.length, cardsNumber);
     newCards.forEach(card => sliderContainer.append(card.generateCard()))
     return sliderContainer
 }
-
 
 // slider moves 
 

@@ -724,7 +724,7 @@ a .contact_link {
         left: -310px;
     }
 
-    .slider.card:last-child {
+    .slider > .slider-item:last-child {
         display: none;
     }
 
@@ -940,7 +940,7 @@ a .contact_link {
         left: -155px;
     }
 
-    .slider.slider-item:nth-child(2) {
+    .slider > .slider-item:nth-child(2) {
         display: none;
     }
 
