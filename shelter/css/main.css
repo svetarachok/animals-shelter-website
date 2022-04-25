@@ -227,12 +227,17 @@ ul {
     z-index: 5;
 }
 
+.modal_overlay:hover .btn_modal {
+    background-color: var(--primary-color);
+}
+
+
 .modal_wrapper {
     position: absolute;
     width: 900px;
     height: auto;
     z-index: 6;
-    
+    cursor: default;
 }
 
 .modal {
@@ -241,7 +246,7 @@ ul {
     align-items: center;
     background-color: var(--light-grey-color);
     border-radius: 9px;
-    cursor: default;
+
 }
 
 .modal_img {
@@ -257,6 +262,7 @@ ul {
     align-self: center;
     margin: 0 20px;
 }
+
 
 .modal-header, .modal-subheader {
     color: var(--color-back);
@@ -299,10 +305,12 @@ ul {
     z-index: 6;
 }
 
-.btn_modal:hover {
-    background-color: var(--primary-color);
+.modal_wrapper:hover .btn_modal {
+    background-color: transparent;
 }
-
+.btn_modal:hover {
+    background-color: var(--primary-color) !important;
+}
 
 /*Header styles*/
 
@@ -323,7 +331,6 @@ ul {
 
 .logo {
     text-align: center;
-    z-index: 9;
 }
 
 .logo a {
@@ -851,8 +858,7 @@ a .contact_link {
     }
     .clicked {
         transform: rotate(90deg);
-        position: fixed;
-        right: 60px;
+        z-index: 99;
     }
 
     .opened {
