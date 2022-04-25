@@ -2,11 +2,20 @@ import {Card} from './Card.js'
 import {Modal} from './Modal.js'
 
 
-
+/* Burger menu consts*/
 const burgerMenu = document.querySelector('.burger-icon');
 const menuLinks = document.querySelectorAll('.nav_item');
 const menu = document.querySelector('.menu');
 const overlay = document.querySelector('.overlay')
+
+/*Slider consts*/
+const getData = async (url) => await ( await fetch (url)).json();
+const ALL_PETS_DATA = await getData('../../js/pets.json')
+const BTN_SLIDER_LEFT = document.querySelector('#btn-slider-left');
+const BTN_SLIDER_RIGHT = document.querySelector('#btn-slider-right');
+const SLIDER = document.querySelector('#slider');
+
+
 
 //Burger menu
 
@@ -24,24 +33,15 @@ const closeMenu = () => {
     document.body.classList.remove('hidden-overflow')
 }
 
-burgerMenu.addEventListener('click', function() {
-    burgerMenu.classList.contains('clicked') ? closeMenu() : openMenu()
-})
+burgerMenu.addEventListener('click', function() {burgerMenu.classList.contains('clicked') ? closeMenu() : openMenu()})
 
-menuLinks.forEach(item => {
-        item.addEventListener('click', closeMenu)
-})
+menuLinks.forEach(item => {item.addEventListener('click', closeMenu)})
 
 overlay.addEventListener('click', closeMenu)
 
+
+
 //Main page slider
-
-const getData = async (url) => await ( await fetch (url)).json();
-const ALL_PETS_DATA = await getData('../../js/pets.json')
-const BTN_SLIDER_LEFT = document.querySelector('#btn-slider-left');
-const BTN_SLIDER_RIGHT = document.querySelector('#btn-slider-right');
-const SLIDER = document.querySelector('#slider');
-
 
 const clearSlidesContainer = (position) => {
     const slidesContainer = document.querySelector(`.slider-${position}`)
@@ -133,16 +133,6 @@ SLIDER.addEventListener('animationend', (e) => {
 
 // Modal window
 
-document.querySelector('.slider-center').addEventListener('click', (e) => {
-    if (e.target.closest('.card')) {
-        let clickedCardID = e.target.closest('.card').getAttribute('data-id')
-        let clickedModalData = getClickedModalData(clickedCardID)
-
-        renderModalAtPage(clickedModalData)
-    }
-})
-
-
 const getClickedModalData = (id) => {
     return ALL_PETS_DATA.find(pet => pet.id == id)
 }
@@ -153,4 +143,12 @@ const renderModalAtPage = (pet) => {
     return modal
 }
 
-//
+document.querySelector('.slider-center').addEventListener('click', (e) => {
+    if (e.target.closest('.card')) {
+        let clickedCardID = e.target.closest('.card').getAttribute('data-id')
+        let clickedModalData = getClickedModalData(clickedCardID)
+
+        renderModalAtPage(clickedModalData)
+    }
+})
+
