@@ -89,9 +89,9 @@
     column-gap: 40px;
 }
 
-.card:nth-child(n+7) {
+/* .card:nth-child(n+7) {
     display: none;
-}
+} */
 
 .page_buttons {
     padding-top: 11px;
@@ -123,9 +123,9 @@
         grid-template-columns: 1fr;
     }
     
-    .card:nth-child(n+4) {
+    /* .card:nth-child(n+4) {
         display: none;
-    }
+    } */
     
     .page_buttons {
        padding-top: 0;

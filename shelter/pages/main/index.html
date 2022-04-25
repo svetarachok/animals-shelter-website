@@ -23,6 +23,7 @@
                         </p>
                     </a> 
                 </div>
+                <div class="overlay"></div>
                 <nav class="menu">
                     <ul class="nav_items">
                         <li class="nav_item nav_item_active_light">About the shelter</li>
@@ -58,29 +59,67 @@
         </section>
         <section id="our-friends" class="pets">
             <h3>Our friends who <br>are looking for a house</h3>
-            <div class="pets_slider">         
-                <div class="cards">
-                    <div class="card slider-item">
-                        <img src="../../assets/images/pets-katrine.jpg" alt="Pet Katerine image">
-                        <p class="card_name">Katrine</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>                        
-                    </div>
-                    <div class="card slider-item">
-                        <img src="../../assets/images/pets-jennifer.jpg" alt="Pet Jennifer image">
-                        <p class="card_name">Jennifer</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>
-                    </div>
-                    <div class="card slider-item">
-                        <img src="../../assets/images/pets-woody.jpg" alt="Pet Woody image">
-                        <p class="card_name">Woody</p>
-                        <button class="btn secondary_btn card-btn">Learn more</button>
+            <div class="slider-wrapper">
+                <div class="slider-container">
+                    <div id="slider" class="slider">
+                        <div class="slider slider-left">
+                            <div class="card slider-item" data-id="4">
+                                <img src="../../assets/images/pets-scarlett.jpg" alt="Pet image">
+                                <p class="card_name">Scarlett</p>
+                                <button class="btn secondary_btn card-btn">Learn more</button>                        
+                            </div>
+                            <div class="card slider-item" data-id="6">
+                                <img src="../../assets/images/pets-timmy.jpg" alt="Pet image">
+                                <p class="card_name">Timmy</p>
+                                <button class="btn secondary_btn card-btn">Learn more</button>                        
+                            </div>
+                            <div class="card slider-item" data-id="7">
+                                <img src="../../assets/images/pets-freddie.jpg" alt="Pet image">
+                                <p class="card_name">Freddie</p>
+                                <button class="btn secondary_btn card-btn">Learn more</button>                        
+                            </div>
+                        </div>         
+                        <div class="slider slider-center">
+                            <div class="card slider-item" data-id="5">
+                                <img src="../../assets/images/pets-katrine.jpg" alt="Pet Katimage">
+                                <p class="card_name">Katrine</p>
+                                <button class="btn secondary_btn card-btn">Learn more</button>                        
+                            </div>
+                            <div class="card slider-item" data-id="1">
+                                <img src="../../assets/images/pets-jennifer.jpg" alt="Pet Jenimage">
+                                <p class="card_name">Jennifer</p>
+                                <button class="btn secondary_btn card-btn">Learn more</button>
+                            </div>
+                            <div class="card slider-item" data-id="3">
+                                <img src="../../assets/images/pets-woody.jpg" alt="Pet image">
+                                <p class="card_name">Woody</p>
+                                <button class="btn secondary_btn card-btn">Learn more</button>
+                            </div>
+                        </div>
+                        <div class="slider slider-right">
+                            <div class="card slider-item" data-id="4">
+                                <img src="../../assets/images/pets-scarlett.jpg" alt="Pet image">
+                                <p class="card_name">Scarlett</p>
+                                <button class="btn secondary_btn card-btn">Learn more</button>                        
+                            </div>
+                            <div class="card slider-item" data-id="6">
+                                <img src="../../assets/images/pets-timmy.jpg" alt="Pet image">
+                                <p class="card_name">Timmy</p>
+                                <button class="btn secondary_btn card-btn">Learn more</button>                        
+                            </div>
+                            <div class="card slider-item" data-id="7">
+                                <img src="../../assets/images/pets-freddie.jpg" alt="Pet image">
+                                <p class="card_name">Freddie</p>
+                                <button class="btn secondary_btn card-btn">Learn more</button>                        
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="slider__controls">
-                    <button class="btn secondary_btn round_btn slider-control slider-control-prev">
+                    <button id="btn-slider-left" class="btn secondary_btn round_btn slider-control slider-control-prev">
                         <span class="material-icons left_arrow">arrow_right_alt</span>
                     </button>
-                    <button class="btn secondary_btn round_btn slider-control slider-control-next">
+                    <button id="btn-slider-right" class="btn secondary_btn round_btn slider-control slider-control-next">
                         <span class="material-icons">arrow_right_alt</span>
                     </button> 
                 </div>
@@ -170,6 +209,6 @@
             </div>
             <img src="../../assets/images/footer-puppy.png" alt="Puppy image">
     </footer>
-    <script src="script.js"></script>
+    <script src="../../js/script.js" type="module"></script>
 </body>
 </html>
