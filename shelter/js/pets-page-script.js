@@ -127,6 +127,7 @@ let tabletMatrix = makeResponsiveMatrix(desktopMatrix[0], 6);
 let mobileMatrix = makeResponsiveMatrix(desktopMatrix[0], 3);
 let newRandomMatrix;
 
+
 const determineScreenSize = () => {
     let currentSize = window.innerWidth;
     
@@ -137,13 +138,13 @@ const determineScreenSize = () => {
     } else {
         newRandomMatrix = desktopMatrix;
     }
+
 return newRandomMatrix
 
 }
 
 determineScreenSize();
 let pagesAmount = newRandomMatrix.length;
-
 //generate set of random cards for 1 page
 const generateCardsForOnePage = (randomArray, cardsData) => {
     let cardsArray = [];
@@ -174,6 +175,7 @@ const renderCardsBundle = (pageContent, randomArray, cardsData) => {
 //initialize page render from page start
 renderCardsBundle(pageWithCards, newRandomMatrix[0], ALL_PETS_DATA);
 pageNumber.innerHTML = countPage;
+BTN_PAGE_LEFT.disabled = true;
 
 const renderPages = () => {
     let randomMatrix = newRandomMatrix;
@@ -185,12 +187,12 @@ const handleRightBtns = () => {
     if (countPage > 1) {
         BTN_PAGE_LEFT.classList.remove('inactive_btn')
         BTN_PAGE_LEFT_END.classList.remove('inactive_btn')
-        BTN_PAGE_LEFT.addEventListener('click', handleLeftBtns);
+        BTN_PAGE_LEFT.disabled = false;
     }
     if (countPage === pagesAmount) {
         BTN_PAGE_RIGHT.classList.add('inactive_btn')
         BTN_PAGE_RIGHT_END.classList.add('inactive_btn')
-        BTN_PAGE_RIGHT.removeEventListener('click', handleRightBtns);
+        BTN_PAGE_RIGHT.disabled = true;
      }  
      renderPages()  
 }
@@ -199,12 +201,12 @@ const handleLeftBtns = () => {
     if (countPage === 1) {
         BTN_PAGE_LEFT.classList.add('inactive_btn')
         BTN_PAGE_LEFT_END.classList.add('inactive_btn')
-        BTN_PAGE_LEFT.removeEventListener('click', handleLeftBtns);
+        BTN_PAGE_LEFT.disabled = true;
      }  
      if (countPage < pagesAmount) {
         BTN_PAGE_RIGHT.classList.remove('inactive_btn')
         BTN_PAGE_RIGHT_END.classList.remove('inactive_btn')
-        BTN_PAGE_RIGHT.addEventListener('click', handleRightBtns);
+        BTN_PAGE_RIGHT.disabled = false;
     }
     renderPages()
 }
