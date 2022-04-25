@@ -21,15 +21,7 @@ const BTN_PAGE_RIGHT_END = document.querySelector('.btn-page-right-end');
 const pageNumber = document.querySelector('.page_number');
 const pageWithCards = document.querySelector('.cards_pets');
 
-//Basic Matrix with IDs to get randoms
-const arrBasic = [ 
-    [1, 2, 3, 4, 5, 6, 7, 8],
-    [1, 2, 3, 4, 5, 6, 7, 8],
-    [1, 2, 3, 4, 5, 6, 7, 8],
-    [1, 2, 3, 4, 5, 6, 7, 8],
-    [1, 2, 3, 4, 5, 6, 7, 8],
-    [1, 2, 3, 4, 5, 6, 7, 8],
-];
+
 
 //Page counter
 
@@ -79,6 +71,16 @@ cardsPage.addEventListener('click', (e) => {
 
 //* PAGINATION
 
+//Basic Matrix with IDs to get randoms
+const arrBasic = [ 
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+    [1, 2, 3, 4, 5, 6, 7, 8],
+];
+
 // shuffle array of IDs for current page
 
 const shuffleArray = (array) => {
@@ -89,22 +91,60 @@ const shuffleArray = (array) => {
     return array
   }
 
-
-// make new Matrix with random IDs for each page (for each window reload)
+// make new Matrix with random IDs for each page (desktop)
 
 const makeMatrix = (basicArray) => {
   let result;
-  let arrRes = []
-  
+  let matrixRes = []
   for (let i=0; i<basicArray.length; i++) {
     result = shuffleArray(basicArray[i]);
-    arrRes.push(result)
+    matrixRes.push(result)
   }
- return arrRes
+ return matrixRes
 }
 
+// make new Matrix with random IDs for each page (tablet, mobile)
+
+const makeResponsiveMatrix = (arr, numberPerPage) => {
+    let base = [];
+    for (let i=0; i < 6; i++) {
+        base.push(arr)
+    }
+    let res = base.join().split(',').map(i => i = +i)
+
+    let matrixRes = []
+    for (let i = 0; i < res.length; i += numberPerPage) {
+      let x = res.slice(i, i + numberPerPage)
+      matrixRes.push(x)
+    }
+    return matrixRes
+  }
+  
+
 //initialize new Matrix from page start
-let newRandomMatrix = makeMatrix(arrBasic);
+let desktopMatrix = makeMatrix(arrBasic);
+let tabletMatrix = makeResponsiveMatrix(desktopMatrix[0], 6);
+let mobileMatrix = makeResponsiveMatrix(desktopMatrix[0], 3);
+let newRandomMatrix;
+
+const determineScreenSize = () => {
+    let currentSize = window.innerWidth;
+    
+    if (currentSize <= 1279 && currentSize > 767 ) {
+        newRandomMatrix = tabletMatrix;
+    } else if (currentSize <= 767 ){
+        newRandomMatrix = mobileMatrix;
+    } else {
+        newRandomMatrix = desktopMatrix;
+    }
+    console.log(newRandomMatrix)
+    console.log(newRandomMatrix.length)
+return newRandomMatrix
+
+}
+
+determineScreenSize();
+let pagesAmount = newRandomMatrix.length;
 
 //generate set of random cards for 1 page
 const generateCardsForOnePage = (randomArray, cardsData) => {
@@ -124,6 +164,7 @@ const clearPageContainer = (pageContainer) => {
     return pageContainer
 }
 let countPage = 1;
+
 // render cards at one page
 const renderCardsBundle = (pageContent, randomArray, cardsData) => {
     let clearPageContent = clearPageContainer(pageContent);
@@ -148,7 +189,7 @@ const handleRightBtns = () => {
         BTN_PAGE_LEFT_END.classList.remove('inactive_btn')
         BTN_PAGE_LEFT.addEventListener('click', handleLeftBtns);
     }
-    if (countPage === 6) {
+    if (countPage === pagesAmount) {
         BTN_PAGE_RIGHT.classList.add('inactive_btn')
         BTN_PAGE_RIGHT_END.classList.add('inactive_btn')
         BTN_PAGE_RIGHT.removeEventListener('click', handleRightBtns);
@@ -162,7 +203,7 @@ const handleLeftBtns = () => {
         BTN_PAGE_LEFT_END.classList.add('inactive_btn')
         BTN_PAGE_LEFT.removeEventListener('click', handleLeftBtns);
      }  
-     if (countPage < 6) {
+     if (countPage < pagesAmount) {
         BTN_PAGE_RIGHT.classList.remove('inactive_btn')
         BTN_PAGE_RIGHT_END.classList.remove('inactive_btn')
         BTN_PAGE_RIGHT.addEventListener('click', handleRightBtns);
@@ -172,17 +213,17 @@ const handleLeftBtns = () => {
 
 // add event listeners to page buttons
 BTN_PAGE_RIGHT.addEventListener('click', () => {
-    (countPage >= 1 && countPage <= 6 ) ? countPage += 1 : countPage = 1
+    (countPage >= 1 && countPage <= pagesAmount ) ? countPage += 1 : countPage = 1
 })
 BTN_PAGE_RIGHT.addEventListener('click', handleRightBtns);
 
 BTN_PAGE_LEFT.addEventListener('click', () => {
-    (countPage >= 1 && countPage <= 6 ) ? countPage -= 1 : countPage = 1
+    (countPage >= 1 && countPage <= pagesAmount ) ? countPage -= 1 : countPage = 1
 })
 BTN_PAGE_LEFT.addEventListener('click', handleLeftBtns);
 
 BTN_PAGE_RIGHT_END.addEventListener('click', () => {
-    countPage = 6;
+    countPage = pagesAmount;
     handleRightBtns();
 })
 
