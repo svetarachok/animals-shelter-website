@@ -138,7 +138,7 @@ const determineScreenSize = () => {
     } else {
         newRandomMatrix = desktopMatrix;
     }
-
+console.log(newRandomMatrix)
 return newRandomMatrix
 
 }
